@@ -3,6 +3,46 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  color: #2B3BBF;
+  font: 50px Helvetica, Arial, sans-serif;
+  position: relative;
+  text-align:center;
+  margin-top: -20px;
+}
+
+p.about {
+  margin: 40px auto 50px;
+  max-width: 500px;
+  color: #4d4d4d;
+  font: "Google Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.6em;
+  text-align: center;
+  font-size: 12px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.searchBox #input {
+  height: 36px;
+  border: 1px solid grey;
+  width: 400px;
+  padding: 0px 15px;
+}
+
+.searchBox #input:focus {
+  outline: none;
+  border: 1px solid #2B3BBF;
+}
+
+.iconSearch {
+  margin-left: -30px;
+  width: 20px;
+  height: 20px;
+  right: 25px;
 }
