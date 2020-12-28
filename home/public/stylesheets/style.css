@@ -8,7 +8,7 @@ h1 {
   font: 50px Helvetica, Arial, sans-serif;
   position: relative;
   text-align:center;
-  margin-top: -20px;
+  margin-top: 20px;
 }
 
 p.about {
@@ -45,4 +45,38 @@ p.about {
   width: 20px;
   height: 20px;
   right: 25px;
+}
+
+/* Menu */
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #2B3BBF;
+  height: 50px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+li {
+  display: inline;
+  margin: 0px 15px;
+}
+
+li:first-child {
+  margin-left: 28px
+}
+
+li > a {
+  text-decoration: none;
+  color: white;
 }
