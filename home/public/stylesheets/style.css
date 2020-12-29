@@ -97,7 +97,6 @@ h2 {
               -11px -11px 22px #e9e9e9;
 }
 
-
 .site > img {
   height: 25px;
   width: auto;
@@ -111,6 +110,26 @@ h2 {
 a {
   text-decoration: none;
 }
+/* Site */
+
+.second_row_product > h2 {
+  margin-top: 10px;
+}
+
+.list_product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.list_product > a > .site {
+  width: 150px;
+  height: 120px;
+}
+
 
 /* Menu */
 
