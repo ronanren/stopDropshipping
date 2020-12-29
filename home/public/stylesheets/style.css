@@ -1,21 +1,23 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 h1 {
   color: #2B3BBF;
-  font: 50px Helvetica, Arial, sans-serif;
+  font: 50px 'Open Sans', sans-serif;
   position: relative;
   text-align:center;
   margin-top: 20px;
+  font-weight: 600;
 }
 
 p.about {
   margin: 40px auto 50px;
   max-width: 500px;
   color: #4d4d4d;
-  font: "Google Sans", Helvetica, Arial, sans-serif;
+  font: 'Open Sans', sans-serif;
   line-height: 1.6em;
   text-align: center;
   font-size: 12px;
@@ -50,13 +52,64 @@ p.about {
 .list_site {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
 }
 
-.list_site > h2 {
+#inputSearch {
+  height: 36px;
+  border: 1px solid grey;
+  width: 200px;
+  padding: 0px 30px 0px 15px;
+  margin: 10px 0px 10px 20px;
+}
+
+#inputSearch:focus {
+  outline: none;
+  border: 1px solid #2B3BBF;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
   margin-top: 75px;
   color: #2B3BBF;
+}
+
+.site {
+  width: 200px;
+  height: 100px;
+  background: #f3f3f3;
+  box-shadow:  11px 11px 22px #c4c3c3,
+              -11px -11px 22px #fdfdfd;
+  margin: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site:hover {
+  background: #f3f3f3;
+  box-shadow:  11px 11px 22px #fafafa,
+              -11px -11px 22px #e9e9e9;
+}
+
+
+.site > img {
+  height: 25px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.site > h3 {
+  color: #222222;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Menu */
@@ -157,7 +210,7 @@ button{
 }
 
 button.neu-light{
-	background-color: rgb(243, 243, 243);
+	background-color: rgb(243, 243, 243); 
 	filter: drop-shadow(3.4px 3.4px 3.4px rgb(183, 177, 181)) drop-shadow(-3.4px -3.4px 3.4px white);
 	-webkit-filter: drop-shadow(3.4px 3.4px 3.4px rgb(183, 177, 181)) drop-shadow(-3.4px -3.4px 3.4px white);
 	box-shadow: inset 4.3px 4.3px 7px #fff;

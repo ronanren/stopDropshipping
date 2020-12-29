@@ -2,6 +2,8 @@
 
 {% block body %}
   <script src="javascripts/script.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <h1>{{title}}</h1>
   <p class="about">
     StopDropshipping détecte et répertorie les différents sites de Dropshipping afin de vous éviter de vous faire arnaquer.
@@ -21,7 +23,17 @@
       </div>
     </a>
   </div>
+  <h2>Vous trouverez ici tous les sites de dropshipping référencés par la plateforme.</h2>
+  <input type="text" id="inputSearch" onkeyup="searchSite()" placeholder="Search" title="Search">
   <div class="list_site">
-    <h2>Vous trouverez ici tous les sites de dropshipping référencés par la plateforme.</h2>
+    {% for site in data %}
+    <a href="https://{{ site.url }}">
+      <div class="site">
+        <img src="{{ site.logo }}">
+        <h3>{{ site.url }}</h3>
+      </div>
+    </a>
+    {% endfor %}
   </div>
+  
 {% endblock %}

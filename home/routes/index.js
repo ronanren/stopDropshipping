@@ -8,7 +8,12 @@ const axios = require("axios");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'StopDropshipping' });
+  db.any('SELECT * FROM public.sites WHERE dropshipping = true').then(data => {
+    res.render('index', { title: 'StopDropshipping', data: data});
+  }).catch(error => {
+    console.log(error);
+  });
+  
 });
 
 /* GET FAQ page. */
@@ -42,7 +47,6 @@ router.get('/product/:productURL', function(req, res, next) {
          }).catch((error)=>{
            data.image = "error";
          }).then(function () {
-          console.log(data);
           res.render('product', { title: 'StopDropshipping', data: data});
         });;
   
@@ -50,7 +54,6 @@ router.get('/product/:productURL', function(req, res, next) {
     url = "URL invalide, veuillez <a href='/' style='color: purple; text-decoration: none;'>recommencer ici</a>";
     console.log(err)
   }
-  // res.render('product', { title: 'StopDropshipping', data: data});
 });
 
 
