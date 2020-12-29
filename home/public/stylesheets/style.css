@@ -110,6 +110,7 @@ h2 {
 a {
   text-decoration: none;
 }
+
 /* Site */
 
 .second_row_product > h2 {
@@ -200,12 +201,16 @@ li > a:hover {
 
 .second_row_product > p {
   margin: 40px auto 50px;
-  max-width: 500px;
+  max-width: 600px;
   color: #4d4d4d;
   font: "Google Sans", Helvetica, Arial, sans-serif;
   line-height: 1.6em;
   text-align: center;
   font-size: 14px;
+}
+
+.second_row_product a {
+  color: #2B3BBF;
 }
 
 .product {

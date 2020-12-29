@@ -33,9 +33,14 @@ router.get('/product/:productURL', function(req, res, next) {
     url = new URL(req.params['productURL']);
     data.url = url;
     data.logo = 'https://s2.googleusercontent.com/s2/favicons?domain_url=' + url.host;
+    data.site_already_save = false;
     db.one('SELECT * FROM public.sites WHERE URL = $1', url.host)
     .then(function (site) {
       data.dropshipping = site.dropshipping;
+      if (url.href == url.protocol + "//" + url.host + "/" && data.dropshipping == true){
+        render = "../site/" + url.host;
+        data.site_already_save = render;
+      }
     })
     .catch(function (error) {
       db.one('INSERT INTO public.sites(URL, NAME, DROPSHIPPING, LOGO) VALUES ($1, $2, $3, $4)', [url.host, url.host.split('.')[0], false, data.logo]).then(data => {}).catch(error => {});

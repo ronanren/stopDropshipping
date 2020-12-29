@@ -2,8 +2,6 @@
 
 {% block body %}
   <script src="javascripts/script.js"></script>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <h1>{{title}}</h1>
   <p class="about">
     StopDropshipping détecte et répertorie les différents sites de Dropshipping afin de vous éviter de vous faire arnaquer.
@@ -12,7 +10,7 @@
   <div class="searchBox">
     <input name="input" id="input" type="url" placeholder="Scanner une URL d'un produit" 
           autofocus="" pattern=".*" minlength="" maxlength="" min="" 
-          max="" autocapitalize="off" autocomplete="off" spellcheck="false">
+          max="" autocapitalize="off" autocomplete="off" spellcheck="false" onkeypress='checkEnterClick(event)'>
     <a href="" id='search'>
       <div class="iconSearch">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
