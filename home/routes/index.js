@@ -27,34 +27,29 @@ router.get('/product/:productURL', function(req, res, next) {
   try {
     url = new URL(req.params['productURL']);
     data.url = url;
-    db.one('SELECT * FROM sites WHERE URL = $1', url.host)
-    .then(function (data) {
-      data.existSite = true;
-      console.log('DATA:', data);
-    })
-    .catch(function (error) {
-      data.existSite = false;
-    })
     data.logo = 'https://s2.googleusercontent.com/s2/favicons?domain_url=' + url.host;
-
+    db.one('SELECT * FROM public.sites WHERE URL = $1', url.host)
+    .then(function (data) {})
+    .catch(function (error) {
+      db.one('INSERT INTO public.sites(URL, NAME, DROPSHIPPING, LOGO) VALUES ($1, $2, $3, $4)', [url.host, url.host.split('.')[0], false, data.logo]).then(data => {}).catch(error => {});
+    })
     axios.get(url + ".json")
          .then((response)=>{
            data.image = response.data.product.image.src
            data.aliseeks = "https://www.aliseeks.com/search/image?aref=undefined&av=1.0.0.4&imageurl=" + data.image;
+           db.one('UPDATE public.sites SET DROPSHIPPING = true WHERE URL = $1', url.host).then(data => {}).catch(error => {});
+           db.one('INSERT INTO public.products(URL_PRODUCT, URL, IMAGE, ALISEEKS) VALUES ($1, $2, $3, $4)', [data.url.href, url.host, data.image, data.aliseeks]).then(data => {}).catch(error => {});
          }).catch((error)=>{
            data.image = "error";
          }).then(function () {
           console.log(data);
           res.render('product', { title: 'StopDropshipping', data: data});
         });;
-    
-
   
   } catch(err) {
     url = "URL invalide, veuillez <a href='/' style='color: purple; text-decoration: none;'>recommencer ici</a>";
     console.log(err)
   }
-  // db.one('INSERT INTO sites(URL, NAME, DROPSHIPPING, LOGO) VALUES ($1, $2, $3, $4)', url.host, url.host.split('.')[0], dropshipping, logo)
   // res.render('product', { title: 'StopDropshipping', data: data});
 });
 

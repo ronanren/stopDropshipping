@@ -32,7 +32,7 @@ p.about {
   height: 36px;
   border: 1px solid grey;
   width: 400px;
-  padding: 0px 15px;
+  padding: 0px 30px 0px 15px;
 }
 
 .searchBox #input:focus {
@@ -45,6 +45,18 @@ p.about {
   width: 20px;
   height: 20px;
   right: 25px;
+}
+
+.list_site {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.list_site > h2 {
+  margin-top: 75px;
+  color: #2B3BBF;
 }
 
 /* Menu */
@@ -111,6 +123,7 @@ li > a:hover {
 .second_row_product > img {
   height: 400px;
   width: auto;
+  border-radius: 15px;
 }
 
 .second_row_product > p {
