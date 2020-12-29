@@ -27,7 +27,7 @@
   <input type="text" id="inputSearch" onkeyup="searchSite()" placeholder="Search" title="Search">
   <div class="list_site">
     {% for site in data %}
-    <a href="https://{{ site.url }}">
+    <a href="/site/{{ site.url }}">
       <div class="site">
         <img src="{{ site.logo }}">
         <h3>{{ site.url }}</h3>

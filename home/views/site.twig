@@ -1,0 +1,24 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <div class="product">
+    <div class="row first_row_product">
+      <img src="{{ data.logo }}">
+      <h4>{{ data.url}}</h4>
+    </div>
+    {% if data.dropshipping == true %}
+      <div class="row second_row_product">
+        <p>liste des produits scanné</p>
+      </div>
+    {% else %}
+      <div class="row second_row_product">
+        <p>Site non répertorié au sein de la plateforme</p>
+      </div>
+    {% endif %}
+    <div class="row">
+      <a href="/"><button id="btn" type="button" class="neu-light btn-action" >Revenir au menu d'acceuil</button></a>
+    </div>
+  </div>
+{% endblock %}
