@@ -1,8 +1,25 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-  <img src="{{ data.logo }}">
-  <h1 style="font-size: 28px">{{ data.url.href }}</h1>
-  <img src="{{ data.image }}">
+  <div class="product">
+    <div class="row first_row_product">
+      <img src="{{ data.logo }}">
+      <h4>{{ data.url.href }}</h4>
+    </div>
+    {% if data.image != "error" %}
+      <div class="row second_row_product">
+        <img src="{{ data.image }}">
+      </div>
+      <div class="row">
+        <a href="{{ data.aliseeks }}" target="_blank"><button id="btn" type="button" class="neu-light btn-action" >Retrouver le vrai article au meilleur prix</button></a>
+      </div>
+    {% else %}
+      <div class="row second_row_product">
+        <p>Probablement pas un site de dropshipping, si vous êtes certains que c'est du dropshipping, veuillez envoyer le lien du site dans la partie <a href="/contact">contact</a></p>
+      </div>
+      <div class="row">
+        <a href="/" target="_blank"><button id="btn" type="button" class="neu-light btn-action" >Revenir au menu d'acceuil</button></a>
+      </div>
+    {% endif %}
   </div>
 {% endblock %}

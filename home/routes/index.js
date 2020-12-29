@@ -35,13 +35,14 @@ router.get('/product/:productURL', function(req, res, next) {
     .catch(function (error) {
       data.existSite = false;
     })
-    data.logo = 'https://www.google.com/s2/favicons?domain=' + url.host;
+    data.logo = 'https://s2.googleusercontent.com/s2/favicons?domain_url=' + url.host;
 
     axios.get(url + ".json")
          .then((response)=>{
            data.image = response.data.product.image.src
+           data.aliseeks = "https://www.aliseeks.com/search/image?aref=undefined&av=1.0.0.4&imageurl=" + data.image;
          }).catch((error)=>{
-           data.image = "https://via.placeholder.com/400";
+           data.image = "error";
          }).then(function () {
           console.log(data);
           res.render('product', { title: 'StopDropshipping', data: data});
