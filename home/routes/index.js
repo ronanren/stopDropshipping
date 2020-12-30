@@ -58,7 +58,6 @@ router.get('/product/:productURL', function(req, res, next) {
          }).catch((error)=>{
             data.image = "error";
          }).then(function () {
-            console.log(data);
             res.render('product', { title: 'StopDropshipping', data: data});
         });
   

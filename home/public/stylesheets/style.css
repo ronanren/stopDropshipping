@@ -331,7 +331,6 @@ section.faq {
   line-height: 1.45;
   position: relative;
   overflow: hidden;
-  max-height: 250px;
   will-change: max-height;
   contain: layout;
   display: inline-block;
@@ -483,24 +482,43 @@ fieldset > textarea {
   padding: 5px 75px;
 }
 
+footer {
+  position: fixed;
+  left: 0px;
+  bottom: 8px;
+  height: 30px;
+  width: 100%;
+  text-align: center;
+}
+
 /* Responsive design */
 
 @media screen and (max-width: 800px) {
+  html, body {
+    margin: 0px;
+  }
+  .menu > ul > li > a {
+    font-size: 17px;
+  }
   h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
   #contact-form  {
     width: 100%;
   }
   p.about {
-    font-size: 13px;
+    font-size: 15px;
+    text-align: justify;
   }
   .list_site {
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
   }
   .site {
-    width: 140px;
+    width: 135px;
+    height: 75px;
+    flex-direction: column;
+    margin: 10px;
   }
   .site > h3 {
     font-size: 13px;
@@ -513,23 +531,31 @@ fieldset > textarea {
     height: 300px;
   }
   .first_row_product > h4 {
-    font-size: 10px;
+    font-size: 11px;
+  }
+  .second_row_product > h2 {
+    font-size: 20px;
+  }
+  .second_row_product > img {
+    height: 200px;
   }
   .btn-action {
-    max-width: 180px;
+    max-width: 120px;
     padding: 15px;
   }
   footer > p {
     font-size: 12px;
   }
+  #inputSearch {
+    padding-right: 15px;
+    margin-left: 35px;
+  }
+  #faq p {
+    font-size: 18px;
+    padding: 0px 0px 0 15px
+  }
+  fieldset > label, fieldset > input, fieldset > textarea, fieldset > button {
+    font-size: 18px;
+  }
+  
 } 
-
-footer {
-  display:flex; 
-  justify-content: center;
-}
-
-footer > p {
-  position: absolute;
-  bottom: 0px;
-}
