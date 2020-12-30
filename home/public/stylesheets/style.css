@@ -2,13 +2,14 @@ body {
   padding: 50px;
   font: 14px 'Open Sans', sans-serif;
   font-weight: 400;
+  background-color: #F7FAFC;
 }
 
 h1 {
   color: #2B3BBF;
   font: 50px 'Open Sans', sans-serif;
   position: relative;
-  text-align:center;
+  text-align: center;
   margin-top: 20px;
   font-weight: 600;
 }
@@ -354,8 +355,6 @@ section.faq {
   overflow: hidden;
   padding: 0;
   margin: 0;
-  /*padding-bottom: 4px;*/
-  /*padding-top: 18px;*/
   background: #fff;
   box-shadow: 0 3px 10px -2px rgba(0,0,0,0.1);
   -webkit-tap-highlight-color: transparent;
@@ -398,15 +397,85 @@ section.faq {
   color: #000;
 }
 #faq ul li input[type=checkbox]:checked ~ p {
-  /*margin-top: 0;*/
   max-height: 0;
   transition: .3s;
   opacity: 0;
-  /*transform: translate(0, 50%);*/
 }
 #faq ul li input[type=checkbox]:checked ~ i:before {
   transform: translate(2px, 0) rotate(45deg);
 }
 #faq ul li input[type=checkbox]:checked ~ i:after {
   transform: translate(-2px, 0) rotate(-45deg);
+}
+
+/* Contact */
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#contact-form {
+  background-color: white;
+  border-radius: 15px;
+  width: 75%;
+  max-width: 700px;
+}
+
+#contact-form > fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  align-items: center;
+}
+
+fieldset > input, fieldset > textarea, fieldset > button {
+  margin-bottom: 15px;
+}
+
+fieldset > button {
+  width: 250px;
+}
+
+fieldset > label {
+  align-self: flex-start;
+  font: 14px 'Open Sans', sans-serif;
+  color: #444444;
+  margin-bottom: 10px;
+}
+
+fieldset > input, fieldset > textarea {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #b4bac2;
+  width: 100%;
+  line-height: 30px;
+}
+
+fieldset > textarea {
+  height: 120px;
+}
+
+.success, .not-success {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.success > p {
+  color: white;
+  background-color: green;
+  border-radius: 10px;
+  padding: 5px 75px;
+}
+
+.not-success > p {
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+  padding: 5px 75px;
 }

@@ -5,5 +5,9 @@
         "login": "",
         "password": "",
         "database": ""
+    },
+    "mail": {
+        "login": "",
+        "password": ""
     }
 }

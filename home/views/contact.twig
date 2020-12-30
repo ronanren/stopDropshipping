@@ -2,8 +2,43 @@
 
 {% block body %}
   <h1>{{title}}</h1>
-  <p class="about">
-    Contact
-  </p>
+  {% if sent == true %}
+    <div class="success">
+      <p>Votre message a été envoyé avec succès !</p>
+    </div>
+  {% elseif sent == false %}
+    <div class="not-success">
+      <p>Erreur, votre message n'a pas été envoyé !</p>
+    </div>
+  {% endif %}
+  <div class="contact-form">
+    <form action="/contact" id="contact-form" method="post" role="form">
+      <fieldset>
+        <label for="name">Nom</label>
+        <input 
+          id="name" 
+          name="name" 
+          type="text" 
+          placeholder="Votre nom" 
+          required/>
+
+        <label for="email">Email</label>
+        <input 
+          id="email" 
+          name="email" 
+          type="email" 
+          placeholder="Votre email" 
+          required/>
+        <label for="message">Message</label>
+        <textarea
+          id="message" 
+          name="message" 
+          placeholder="Entrer votre message ici" 
+          rows="3" 
+          required></textarea>
+
+        <button type="submit">Envoyer</button>
+      </fieldset>
+    </form>
   </div>
 {% endblock %}

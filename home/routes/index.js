@@ -5,6 +5,8 @@ const stg = require('../../settings.json')
 var pgp = require('pg-promise')(/* options */)
 var db = pgp('postgres://' + stg['postgresql']['login'] + ':' + stg['postgresql']['password'] + '@' + stg['postgresql']['host'] + ':' + stg['postgresql']['port'] + '/' + stg['postgresql']['database']);
 const axios = require("axios");
+const nodemailer = require('nodemailer')
+const bodyParser = require('body-parser')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -93,6 +95,36 @@ router.get('/site/:siteURL', function(req, res, next) {
     console.log(err)
   }
 });
+
+router.post('/contact', (req, res) => {
+
+  const smtpTrans = nodemailer.createTransport({
+    host: 'smtp.laposte.net',
+    port: 465,
+    secure: true,
+    auth: {
+      user: stg['mail']['login'],
+      pass: stg['mail']['password']
+    }
+  })
+
+  const mailOpts = {
+    from: 'Utilisateur StopDropshipping', 
+    to: stg['mail']['login'],
+    subject: 'New message from contact form at stopDropshipping',
+    text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+  }
+
+  smtpTrans.sendMail(mailOpts, (error, response) => {
+    if (error) {
+      console.log(error);
+      res.render('contact', { title: 'StopDropshipping', sent: false}) 
+    }
+    else {
+      res.render('contact', { title: 'StopDropshipping', sent: true}) 
+    }
+  })
+})
 
 
 module.exports = router;
