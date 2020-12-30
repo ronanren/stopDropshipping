@@ -87,7 +87,6 @@ router.get('/site/:siteURL', function(req, res, next) {
     .catch(function (error) {
       data.dropshipping = false;
     }).then(function () {
-      console.log(data);
       res.render('site', { title: 'StopDropshipping', data: data});
     });
   } catch(err) {
