@@ -24,14 +24,20 @@
   <h2>Vous trouverez ici tous les sites de dropshipping référencés par la plateforme.</h2>
   <input type="text" id="inputSearch" onkeyup="searchSite()" placeholder="Search" title="Search">
   <div class="list_site">
-    {% for site in data %}
-    <a href="/site/{{ site.url }}">
-      <div class="site">
-        <img src="{{ site.logo }}">
-        <h3>{{ site.url }}</h3>
-      </div>
-    </a>
-    {% endfor %}
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Site de Dropshipping</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for site in data %}
+          <tr>
+            <td><img src="{{ site.logo }}"><a href="/site/{{ site.url }}">{{ site.url }}</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
   
 {% endblock %}

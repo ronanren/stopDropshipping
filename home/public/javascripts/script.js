@@ -20,13 +20,13 @@ function checkEnterClick(e){
 }
 
 function searchSite(){
-    sites = document.getElementsByClassName('site');
+    sites = document.getElementById("table").getElementsByTagName("tr");
     search = document.getElementById("inputSearch").value.toUpperCase(); 
-    for (let i = 0; i < sites.length; i++){
-        if (sites[i].children[1].innerHTML.toUpperCase().indexOf(search) > -1) {
-            sites[i].style.display = "";
+    for (let i = 1; i < sites.length; i++){
+        if (sites[i].getElementsByTagName("td")[0].innerText.toUpperCase().indexOf(search) > -1) {
+            sites[i].getElementsByTagName("td")[0].style.display = "";
         } else {
-            sites[i].style.display = "none";
+            sites[i].getElementsByTagName("td")[0].style.display = "none";
         }
     }
 }
