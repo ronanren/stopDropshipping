@@ -10,15 +10,21 @@
       <div class="row second_row_product">
         <h2>Liste des produits scannés :</h2>
       </div>
-      <div class="list_product">
-        {% for product in data.list_product %}
-          <a href="{{ product.aliseeks }}" target="_blank">
-            <div class="site">
-              <img src="{{ product.image }}" style="width: auto; height: 120px; margin-left: 10px;">
-            </div>
-          </a>
-        {% endfor %}
+      <div class="list_site">
+        <table id="table" class="list_product">
+          <tbody>
+            {% for product in data.list_product %}
+              <tr>
+                <td><a href="{{ product.aliseeks }}" target="_blank"><img src="{{ product.image }}"></a></td>
+                <td><a href="{{ product.url_product }}" target="_blank">Lien du produit</a></td>
+                <td><a href="{{ product.aliseeks }}" target="_blank">Vrai produit</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
+
+
     {% else %}
       <div class="row second_row_product">
         <p>Site non répertorié au sein de la plateforme</p>
