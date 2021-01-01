@@ -10,13 +10,13 @@
   <a href="https://ronanren.github.io" target="_blank">Mon site personnel</a> 
 </p>
 
-## Lien : <a href="https://stopdropshipping.net">stopdropshipping.net</a>
+## Lien : <a href="http://stopdropshipping.net">stopdropshipping.net</a>
 
 # Fonctionnalités
 
 - Scanner une URL d'un produit susceptible d'être du dropshipping
 - Détecte si c'est du dropshipping et propose un lien pour obtenir le produit au meilleur prix
-- Enregistre les différents sites de dropshipping scannés 
+- Enregistre les différents sites de dropshipping scannés : <a href="https://github.com/ronanren/stopDropshipping/blob/main/database.sql">database.sql</a>
 
 <p align="center">
     <img src="screenshot.png" width="600px"/>
