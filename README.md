@@ -28,6 +28,9 @@
 # Cloner ce dépôt
 $ git clone https://github.com/ronanren/stopDropshipping
 
+# Configurer le fichier de configuration
+$ mv settings.default.json settings.json
+
 # Accéder au dossier
 $ cd stopDropshipping/home/
 
